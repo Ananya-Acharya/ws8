@@ -1,0 +1,13 @@
+ 1001  awk -F '\t' '($12 == "Y") {print $14}' amazon_reviews_us_Books_v1_02.tsv > verified.txt
+ 1002   awk -F '\t' '($12 == "N") {print $14}' amazon_reviews_us_Books_v1_02.tsv > unverified.txt
+ 1003* head -1000 unverified.txt > verified_1000.txt
+ 1004  cat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/groff/current/eign > temp.txt
+ 1005  sed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20
+ 1006  sed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr > verified_top20.txt
+ 1007  head verified_top20.txt 
+ 1008  head -12 verified_top20.txt 
+ 1009  head -1000 unverified.txt > unverified_1000.txt
+ 1010  cat unverified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | fgrep -v -w -f /usr/share/groff/current/eign > temp2.txt
+ 1011  sed -E 's/\b[a-z]\b//g' temp2.txt | sed 's/br//g' | sort | uniq -c | sort -nr > unverified_top20.txt
+ 1012  head -12 unverified_top20.txt 
+ 1013  history > cmds.log

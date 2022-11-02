@@ -1,0 +1,124 @@
+***********************************************************************
+This file was generated using the command script ws8.txt
+The commands used are in the cmds.log file
+I used a stopwords file from /usr/share/groff/current/eign
+To find most frequent words, I used the command from stackexchange
+
+a) ten most frequent words in verified.txt (only first 1000 reviews used)
+   1838 book
+    521 read
+    474 has
+    362 her
+    271 great
+    258 books
+    254 she
+    230 story
+    194 author
+    187 really
+    185 reading
+
+b) ten most frequent words from unverified.txt (first 1000 reviews only)
+   2095 book
+    676 her
+    600 read
+    558 has
+    446 she
+    400 story
+    313 life
+    298 great
+    278 books
+    262 reading
+    230 author
+
+    Screen capture of ws8.txt follows.
+
+****************************************************************************
+Script started on 2022-11-01 02:15:58-04:00
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ awk -F '\t' '($12 == "Y") {print $14}' amazon_reviews_us_Bookss_v1_02.tsv > verified.txt
+
+^[[A    kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ 
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$  awk -F '\t' '($12 == "N") {print $14}' amazon_reviews_us_Bookks_v1_02.tsv > unverified.txt
+
+
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ 
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ 
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ head -1000 verified.txt > verifir[Ked_1000.txt
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ cat verified_1000.txt | tr -cs A_Z[K[K-Za-z "\n[K[K[K'\n' | tr A-Z a-z[K[ananya@sjsu ws8]$ cat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/gr off/current/eign > temp.txt
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ sed -E [K[K[K[K[K[K[Ksed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K0
+   4612 
+   1838 book
+    521 read
+    474 has
+    362 her
+    271 great
+    258 books
+    254 she
+    230 story
+    194 author
+    187 really
+    185 reading
+    183 life
+    176 does
+    167 written
+    165 love
+    163 found
+    160 its
+    155 through
+    147 don
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ sed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtM[44Phead -1000 verified.txt > verified_1000.txt
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C awk -F '\t' '($12 == "N") {print $14}' amazon_reviews_us_Books_v1_02.tsv > unverified.ttxtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cawk -F '\t' '($12 == "Y") {print $14}' amazon_reviews_us_Books_v1_02.tsv > verified.txt [KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pcat oo | tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -nr | head -50
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cawk -F '\t' '($12 == "Y") {print $14}' amazon_reviews_us_Books_v1_02.tsv > verified.txt M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C awk -F '\t' '($12 == "N") {print $14}' amazon_reviews_us_Books_v1_02.tsv > unverified.ttxtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[44Phead -1000 verified.txt > verified_1000.txt
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtMsed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 [KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtM[44Phead -1000 verified.txt > verified_1000.txt
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtMsed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 [KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K > verified _top20.txt
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ head verified_top20.txt 
+   4612 
+   1838 book
+    521 read
+    474 has
+    362 her
+    271 great
+    258 books
+    254 she
+    230 story
+    194 author
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ head verified_top20.txt [1@-[1@1[1@2[1@ 
+   4612 
+   1838 book
+    521 read
+    474 has
+    362 her
+    271 great
+    258 books
+    254 she
+    230 story
+    194 author
+    187 really
+    185 reading
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ head -12 verified_top20.txt [4P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr > verified__top20.txtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| head -20 [KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[44Phead -1000 verified.txt > verified_1000.txt
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@U[1@N[1P[1P[1@u[1@n[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtM[42Phead -1000 unverified.txt > verified_1000.txt
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat verified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z  | fgrep -v -w -f /usr/share/grooff/current/eign > temp.txtMsed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr | head -20 [KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C> verified__top20.txtM[C[C[C[C[C[C[C[C[Chead verified_top20.txt [K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4@-12 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Khead -1000 unverified.txt > unverified_1000.txt
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ cat unverified_1000.txt | tr -cs A_[K-Za-z "[K'\n' | tr A-Z a-z | fgrep =v=w=f[K[K[K[K[K[K-v-w[K[K -w -f /usr/a[Kshare/g roff/current[Kt/eign > tr[Kemp2.txt
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ sed[K[K[Kcat unverified_1000.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | fgrep -v -w -f /usr/share/grroff/current/eign > temp2.txtM[40Phead -1000 unverified.txt > unverified_1000.txt
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19P2 verified_top20.txt [4P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed -E 's/\b[a-z]\b//g' temp.txt | sed 's/br//g' | sort | uniq -c | sort -nr > verified__top20.txtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2.txt | sed 's/br//g' | sort | uniq -c | sort -nr > verified_top20.txtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuverified_top20.txtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnverified_top20.txtM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ head -12 unverified_top20.txt 
+   5910 
+   2095 book
+    676 her
+    600 read
+    558 has
+    446 she
+    400 story
+    313 life
+    298 great
+    278 books
+    262 reading
+    230 author
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ history > cmds.log
+kananya@sjsu:/mnt/scratch/ananya/ws8\[ananya@sjsu ws8]$ exit
+
+Script done on 2022-11-01 02:47:47-04:00
